@@ -6,6 +6,23 @@
 <%--    <link href="<c:url value="/css/common.css"/>" rel="stylesheet" type="text/css">--%>
 </head>
 <body>
-    <h1> Hello newb ${name}???</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ISBN</th>
+        <th>Name</th>
+        <th>Author</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach items="${books}" var="book">
+        <tr>
+            <td>${book.lastName}</td>
+            <td>${book.amount}</td>
+            <td>${book.productName}</td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
 </body>
 </html>
