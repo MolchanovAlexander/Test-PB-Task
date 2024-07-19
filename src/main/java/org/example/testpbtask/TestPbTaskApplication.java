@@ -6,12 +6,8 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class TestPbTaskApplication extends SpringBootServletInitializer {
+public class TestPbTaskApplication {
 
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-        return builder.sources(TestPbTaskApplication.class);
-    }
 
     public static void main(String[] args) {
         SpringApplication.run(TestPbTaskApplication.class, args);
