@@ -6,8 +6,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import lombok.Data;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
@@ -22,18 +20,11 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
-    private BigDecimal total;
+    private Integer amount;
     @Column(nullable = false)
-    private LocalDateTime orderDate;
+    private String productName;
     @Column(nullable = false)
-    private String shippingAddress;
-//    @EqualsAndHashCode.Exclude
-//    @ToString.Exclude
-//    @OneToMany(
-//            fetch = FetchType.LAZY,
-//            mappedBy = "order"
-//    )
-//    private Set<OrderItem> orderItems;
+    private String lastName;
     @Column(nullable = false)
     private boolean isProcessed = false;
 
