@@ -45,19 +45,17 @@ Orders are saved in SQL db, and after they are sent to the queue they are going 
 
 2. Create .env file in root directory with test data
       ```plaintext
-    SPRING_LOCAL_PORT=8088
-    SPRING_DOCKER_PORT=8080
-    DEBUG_PORT=5005
-    
-    MYSQL_LOCAL_PORT=3333
-    MYSQL_DOCKER_PORT=3306
-    
-    DB_LOGIN=root
-    MYSQL_PASSWORD=---ABCtest11
-    
-    MYSQL_DATABASE=bookstore
-    JWT_EXPIRATION_TIME=3000000
-    JWT_SECRET=ttttttdfdfc1213123ttttt1234567890RRRRwwqq252525cccH
+    # PostgreSQL
+   POSTGRES_USER=rootu
+   POSTGRES_PASSWORD=rootp
+   POSTGRES_DATABASE=orderdb
+   POSTGRES_LOCAL_PORT=5433
+   POSTGRES_DOCKER_PORT=5432
+   
+   # Spring Boot Application
+   SPRING_LOCAL_PORT=8088
+   SPRING_DOCKER_PORT=8080
+
 
 
 3. Build the application:
