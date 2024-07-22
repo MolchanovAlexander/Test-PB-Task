@@ -57,7 +57,6 @@ Orders are saved in SQL db, and after they are sent to the queue they are going 
    SPRING_DOCKER_PORT=8080
 
 
-
 3. Build the application:
 
     ```sh
