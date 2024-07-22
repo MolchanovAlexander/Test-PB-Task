@@ -50,7 +50,7 @@
                 let errors = '';
                 errors += "timestamp: " + data.timestamp + "\n";
                 errors += "status: " + data.status + "\n";
-                errors += "errors: ";
+                errors += "errors: " + "\n";
 
                 if (typeof data.errors === 'string') {
                     errors += data.errors;
