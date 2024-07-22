@@ -1,4 +1,3 @@
-# Build stage
 FROM openjdk:17-jdk-alpine AS builder
 WORKDIR /application
 
