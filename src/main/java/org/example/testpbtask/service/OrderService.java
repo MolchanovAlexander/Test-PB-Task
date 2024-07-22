@@ -5,7 +5,7 @@ import org.example.testpbtask.dto.CreateOrderRequestDto;
 import org.example.testpbtask.dto.OrderResponseDto;
 
 public interface OrderService {
-    void placeOrder(CreateOrderRequestDto requestDto);
+    OrderResponseDto placeOrder(CreateOrderRequestDto requestDto);
 
     List<OrderResponseDto> getAllOrders();
 }
