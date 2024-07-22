@@ -1,23 +1,12 @@
 body {
-    background: linear-gradient(45deg, #c8547d, #4a3f68, #88cf18);
-    background-size: 600% 600%;
-    animation: gradientAnimation 15s ease infinite;
+    background: linear-gradient(45deg, #549cc8, #4a3f68, #88cf18);
+    background-size: 400% 400%;
 }
 
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 0%;
-    }
-    50% {
-        background-position: 100% 100%;
-    }
-    100% {
-        background-position: 0% 0%;
-    }
-}
 p {
     color: white;
 }
+
 form {
     max-width: 600px;
     margin: 0 auto;
@@ -27,11 +16,13 @@ form {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
+
 h1 {
     display: block;
     text-align: center;
     margin: 0 auto;
 }
+
 .input_wrapper {
     display: flex;
     justify-content: space-between;
@@ -60,6 +51,15 @@ input {
     background-color: #5ef09e;
 }
 
+input[type="text"]:-webkit-autofill,
+input[type="text"]:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #5ef09e inset !important;
+}
+
+input[type="number"]:-webkit-autofill,
+input[type="number"]:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #5ef09e inset !important;
+}
 
 input[type="submit"] {
     background-color: #f03555;
