@@ -13,7 +13,7 @@ import org.hibernate.annotations.SQLRestriction;
 @Entity
 @Data
 @SQLDelete(sql = "UPDATE orders SET is_processed = true WHERE id = ?")
-@SQLRestriction(value = "is_deleted=false")
+@SQLRestriction(value = "is_processed=false")
 @Table(name = "orders")
 public class Order {
     @Id
@@ -27,11 +27,4 @@ public class Order {
     private String lastName;
     @Column(nullable = false)
     private boolean isProcessed = false;
-
-    public Order() {
-    }
-
-    public Order(Long id) {
-        this.id = id;
-    }
 }
