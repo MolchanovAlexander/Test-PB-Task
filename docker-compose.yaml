@@ -3,7 +3,7 @@ version: "3.8"
 services:
   db:
     platform: linux/amd64
-    image: postgres
+    image: postgres:12.19
     restart: unless-stopped
     env_file: ./.env
     environment:
@@ -27,7 +27,6 @@ services:
     env_file: ./.env
     ports:
       - ${SPRING_LOCAL_PORT}:${SPRING_DOCKER_PORT}
-      - ${DEBUG_PORT}:${DEBUG_PORT}
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:${POSTGRES_DOCKER_PORT}/${POSTGRES_DATABASE}
       SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
