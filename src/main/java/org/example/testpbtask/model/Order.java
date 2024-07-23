@@ -7,13 +7,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
-import org.hibernate.annotations.SQLDelete;
-import org.hibernate.annotations.SQLRestriction;
 
 @Entity
 @Data
-@SQLDelete(sql = "UPDATE orders SET is_processed = true WHERE id = ?")
-@SQLRestriction(value = "is_processed=false")
 @Table(name = "orders")
 public class Order {
     @Id

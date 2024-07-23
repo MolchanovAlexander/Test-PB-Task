@@ -8,8 +8,7 @@ import org.springframework.stereotype.Service;
 @Log4j2
 @Service
 public class QueueProducer {
-    public boolean send(List<OrderResponseDto> forPublishing) {
+    public void send(List<OrderResponseDto> forPublishing) {
         log.info("Producer has been called, number of messages: {}", forPublishing.size());
-        return true;
     }
 }
