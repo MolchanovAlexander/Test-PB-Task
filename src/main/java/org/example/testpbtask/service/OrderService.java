@@ -8,4 +8,6 @@ public interface OrderService {
     OrderResponseDto placeOrder(CreateOrderRequestDto requestDto);
 
     List<OrderResponseDto> getAllOrders();
+
+    void markOrdersAsProcessed(List<Long> orderIds);
 }

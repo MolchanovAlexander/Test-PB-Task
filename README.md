@@ -1,9 +1,10 @@
 # Test Task  Web Application
 
 ## Overview
-This is a microservice for saving orders to the database ( db ). Once at 5 minutes, these orders are taken and sent to the queue for further processing.
+This is a microservice for saving orders to the database (db) and sending them to the other microservices. 
+Once at 5 minutes, these orders are taken and sent to the queue for further processing.
 Order is taken from JSP form and the result of the action should be printed by alert() JS - function. OK and object with errors respectively.
-Orders are saved in SQL db, and after they are sent to the queue they are going to be marked some way to prevent further selection of already processed orders.
+Orders are saved in SQL db, and after they are sent to the queue they are marked as processed to prevent further selection of already processed orders.
 
 ## Challenges
  - Firstly, search for correct maven dependencies.

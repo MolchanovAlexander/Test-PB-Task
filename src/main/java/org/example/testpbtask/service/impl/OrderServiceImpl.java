@@ -6,10 +6,8 @@ import org.example.testpbtask.dto.CreateOrderRequestDto;
 import org.example.testpbtask.dto.OrderResponseDto;
 import org.example.testpbtask.mapper.OrderMapper;
 import org.example.testpbtask.model.Order;
-import org.example.testpbtask.producer.QueueProducer;
 import org.example.testpbtask.repository.OrderRepository;
 import org.example.testpbtask.service.OrderService;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,9 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 
-    private static final String CRON_EXPRESSION = "0 */5 * * * *";
-    private static final String TIME_ZONE = "Europe/Kiev";
-    private final QueueProducer producer;
     private final OrderRepository orderRepository;
     private final OrderMapper orderMapper;
 
@@ -38,14 +33,8 @@ public class OrderServiceImpl implements OrderService {
                 .toList();
     }
 
-    @Scheduled(cron = CRON_EXPRESSION, zone = TIME_ZONE)
-    @Transactional
-    public void regularSendBatchOfOrders() {
-        List<OrderResponseDto> forPublishing = getAllOrders();
-        producer.send(forPublishing);
-        List<Long> orderIds = forPublishing.stream()
-                .map(OrderResponseDto::getId)
-                .toList();
+    @Override
+    public void markOrdersAsProcessed(List<Long> orderIds) {
         orderRepository.markOrdersAsProcessed(orderIds);
     }
 }
